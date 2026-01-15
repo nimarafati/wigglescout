@@ -220,7 +220,7 @@
 .limited_size_caption_line <- function(named_list) {
     size_limit <- 3
     chunks <- split(named_list, ceiling(seq_along(named_list)/size_limit))
-    paste(vapply(chunks, .key_value_string, character(1)), collapse="\n")
+    paste(sapply(chunks, .key_value_string), collapse="\n")  # Change vapply to sapply
 }
 
 
